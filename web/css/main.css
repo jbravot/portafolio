@@ -1,0 +1,562 @@
+@font-face {
+    font-family: "Baumans";
+    src: url("../fonts/baumans.woff") format('woff');
+}
+ul.pricing-table, .portafolio-bx-close, .link-portafolio, .profile ul li, .profile img, .alert, h2, #portafolio-thumbnails a.thumbnail, .btn-plain{
+	-webkit-transition: all 0.2s ease-out 0s;
+    -moz-transition: all 0.2s ease-out 0s;
+    -o-transition: all 0.2s ease-out 0s;
+    -ms-transition: all 0.2s ease-out 0s;
+    transition: all 0.2s ease-out 0s;
+}
+.navbar .nav>.active>a span{
+     background: #05529E;
+}
+.navbar a span {
+    position: relative;
+    display: inline-block;
+    /*padding: 20px 15px 20px;*/
+    background: #0866C6;
+    -webkit-transition: -webkit-transform 0.3s;
+    -moz-transition: -moz-transform 0.3s;
+    transition: transform 0.3s;
+    -webkit-transform-origin: 50% 0;
+    -moz-transform-origin: 50% 0;
+    transform-origin: 50% 0;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+@media screen and (min-width: 979px){
+    .navbar a span::before {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	padding: 20px 15px 20px;
+	background: #05529E;
+	content: attr(data-hover);
+	-webkit-transition: background 0.3s;
+	-moz-transition: background 0.3s;
+	transition: background 0.3s;
+	-webkit-transform: rotateX(-90deg);
+	-moz-transform: rotateX(-90deg);
+	transform: rotateX(-90deg);
+	-webkit-transform-origin: 50% 0;
+	-moz-transform-origin: 50% 0;
+	transform-origin: 50% 0;
+    }
+    .navbar  a:hover span, .navbar  a:focus span{
+	-webkit-transform: rotateX(90deg) translateY(-22px);
+	-moz-transform: rotateX(90deg) translateY(-22px);
+	transform: rotateX(90deg) translateY(-22px);
+    }
+    .navbar a span {
+	padding: 20px 15px 20px;
+    }
+}
+.alert{
+	-webkit-transition: opacity  1s ease-in-out;
+    -moz-transition: opacity  1s ease-in-out;
+    -o-transition: opacity  1s ease-in-out;
+    -ms-transition: opacity  1s ease-in-out;
+    transition: opacity  1s ease-in-out;
+}
+.hide{
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+	-moz-opacity:0;
+	-khtml-opacity: 0;
+	opacity: 0;
+	visibility: hidden;
+}
+/* == header == */
+.bg-header {
+	color: #fff;
+	text-align: center;
+	background-image: url(../images/bg-header.jpg);
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-origin: padding-box;
+	background-position: center center;
+	background-size: cover;
+	width: 100%;
+	height: 440px;
+}
+.title-header{
+    -webkit-transition: -webkit-transform .5s linear;
+	-moz-transition: -moz-transform 5s linear;
+	-o-transition: -o-transform .5s linear;
+	-ms-transition: -ms-transform .5s linear;
+	/*transition: transform .5s linear;*/
+}
+.move-r{
+	-webkit-transform: translateX(100%);
+	-moz-transform: translateX(100%);
+	-o-transform: translateX(100%);
+	-ms-transform: translateX(100%);
+	transform: translateX(100%);
+}
+.move-l{
+	-webkit-transform: translateX(-100%);
+	-moz-transform: translateX(-100%);
+	-o-transform: translateX(-100%);
+	-ms-transform: translateX(-100%);
+	transform: translateX(-100%);
+}
+h1, .lead{
+	background-color: rgba(51,51,51,.75);
+	margin: 0;
+	display: inline;
+}
+h1 {
+font-size: 81px;
+padding: 40px;
+margin-top: 50px;
+float: right;
+
+}
+.lead {
+font-size: 25px;
+margin-top: 120px;
+float: left;
+padding: 20px;
+}
+
+/* == hide all elements & show preloader == */
+.js, .js body {overflow:hidden}
+.js body > * {visibility:hidden}
+.js #loading_layer {visibility:visible;display:block !important;position:absolute;top:0;left:0;width:100%;height:100%;background:#fff;z-index:10000}
+.js #loading_layer img {position:fixed;top:50%;left:50%;width:144px;height:32px;margin:-5px 0 0 -70px}
+.js .tab-pane {display:block !important}
+.js .hide {display: inherit}
+
+/*== general == */
+body {
+	padding-top: 61px;
+}
+
+/*== nav bar == */
+.navbar .nav-collapse {
+	float: right;
+}
+.logo{
+	font-family: 'Baumans', cursive;
+}
+
+.menu-icon:hover{
+	color: #0866C6;
+	cursor: pointer;
+}
+.portafolio-icon{
+	background-position: 0 0;
+}
+.portafolio-icon:hover{
+	background-position: 0 -76px;
+}
+.acerca-icon:hover{
+	background-position: 0 -228px;
+}
+.acerca-icon{
+	background-position: 0 -152px;
+	color: #fff;
+}
+.contacto-icon:hover{
+	background-position: 0 -380px;
+}
+.contacto-icon{
+	background-position: 0 -304px;
+}
+.diseno-icon:hover{
+	background-position: 0 -532px;
+}
+.diseno-icon{
+	background-position: 0 -456px;
+}
+.link-portafolio{
+	background-image: url(../images/links.png);
+	background-repeat: no-repeat;
+	padding-left: 20px;
+}
+.link-portafolio:hover{
+	background-position: 0 -19px;
+}
+.carousel-inner{
+	border: 2px solid #333;
+}
+.menu-icon{
+	background-image: url(../images/icon-menus.png);
+	background-repeat: no-repeat;
+	padding-left: 100px;
+	height: 55px;
+	padding-top: 20px;
+	font-size: 40px;
+}
+
+a.thumbnail:hover, a.thumbnail:focus {
+	text-decoration: none;
+	background-color: #0866C6 !important;
+
+}
+#portafolio-thumbnails a.thumbnail{
+	background-color: #333;
+	border: none;
+	position: relative;
+	color: #fff;
+}
+#portafolio-thumbnails a.thumbnail .titulo-portafolio h4{
+	font-size: 25px;
+}
+#acerca-de-mi {
+background-color: #999;
+}
+
+.portafolio-bx-close {
+	float: right;
+	padding: 2px 10px;
+	font-weight: bold;
+}
+.portafolio-bx-close:hover {
+	background: #0866C6;
+	color: #fff;
+	text-decoration: none;
+}
+
+section{
+	padding: 60px 0 30px;
+}
+#acerca-de-mi{
+	padding-bottom: 0;
+}
+/* == separador subtitulo ==*/
+.subtitulo{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.bg-acerca{
+	background-color: #fff;
+	padding: 32px;
+	/*left: -90px;*/
+	position: relative;
+}
+#acerca-de-mi h4{
+	font-size: 30px;
+	margin-bottom: 40px !important;
+	margin-right: 20px;
+}
+.habilidades h4{
+	color: #fff;
+	margin-top: 35px;
+	float: left;
+}
+.bg-acerca p{
+	font-size: 17px !important;
+	margin: 0 0 40px !important;
+}
+
+#acerca-de-mi .tools {
+	margin: 15px;
+	background: url(../images/tools.jpg) no-repeat 0 0 #fff;
+	float: right;
+	text-indent: -99999px;
+}
+
+#acerca-de-mi .tools:hover{
+	-webkit-transition: -webkit-filter .5s;
+	-webkit-filter: grayscale(0.5);
+	filter: gray;
+	cursor: pointer;
+}
+
+.django{
+	width: 124px;
+	height: 62px;
+	background-position: -5px 0 !important;
+}
+.php{
+	width: 110px;
+	height: 54px;
+	background-position: -145px -6px !important;
+}
+.drupal{
+	width: 117px;
+	height: 57px;
+	background-position: -275px -2px !important;
+}
+.postgres{
+	width: 79px;
+	height: 59px;
+	background-position: -427px -6px !important;
+}
+.python{
+	width: 120px;
+	height: 48px;
+	background-position: -7px -74px !important;
+}
+.jquery{
+	width: 125px;
+	height: 56px;
+	background-position: -133px -67px !important;
+}
+.symfony{
+	width: 124px;
+	height: 44px;
+	background-position: -272px -76px !important;
+}
+.google-maps{
+	width: 120px;
+	height: 45px;
+	background-position: -406px -73px !important;
+}
+.mysql{
+	width: 126px;
+	height: 59px;
+	background-position: 0 -134px !important;
+}
+.css{
+	width: 73px;
+	height: 62px;
+	background-position: -162px -132px !important;
+}
+.openlayers{
+	width: 117px;
+	height: 42px;
+	background-position: -275px -142px !important;
+}
+.html{
+	width: 85px;
+	height: 59px;
+	background-position: -419px -133px !important;
+}
+.openstreetmap{
+	width: 93px;
+	height: 48px;
+	background-position: -21px -204px !important;
+}
+.linux{
+	width: 63px;
+	height: 60px;
+	background-position: -167px -198px !important;
+}
+.joomla{
+	width: 120px;
+	height: 45px;
+	background-position: -276px -206px !important;
+}
+.java{
+	width: 62px;
+	height: 60px;
+	background-position: -434px -197px !important;
+}
+.bootstrap{
+	width: 117px;
+	height: 42px;
+	background-position: -5px -272px !important;
+}
+/*== disenio web ==*/
+.disenio-msj {
+	text-align: center;
+	color: #fff;
+	background-color: #333;
+	padding: 20px 20px 5px 20px;
+	line-height: 30px;
+	margin-bottom: 30px;
+}
+.pricing-table {
+	border: solid 1px #999;
+	text-align: center;
+	list-style: none;
+}
+.pricing-table .plan {
+	background-color: #999;
+	padding: 15px 20px;
+	font-weight: bold;
+	font-size: 16px;
+}
+.pricing-table .precio {
+	padding: 15px 20px;
+	background-color: rgb(238, 238, 238);
+	font-size: 20px;
+}
+.pricing-table .descripcion {
+	padding: 15px;
+	line-height: 1.4;
+	border-bottom: dotted 1px rgb(221, 221, 221);
+}
+.pricing-table .disenio-item {
+	padding: 10px;
+	font-size: 14px;
+	border-bottom: dotted 1px rgb(221, 221, 221);
+}
+.bg-gris{
+	background-color: #eee;
+}
+.pricing-table-hover{
+ 	border: solid 1px #0866C6;
+}
+.pricing-table-hover .plan{
+ 	background-color: #0866C6;
+ 	color: #fff;
+}
+/*== form == */
+form.contac{
+	margin-bottom: 20px;
+}
+form.contac textarea, form.contac input{
+	font-size: 16px;
+	border: 4px solid #0866c8;
+	width: 95%;
+	padding: 10px;
+	margin-bottom: 30px;
+	outline: medium none;
+}
+form.contac textarea:hover, form.contac input:hover{
+	border: 4px solid #05529e;
+}
+form.contac input{
+	height: 25px;
+}
+.btn-plain:hover{
+	background-color: #05529e;
+}
+.btn-plain{
+	background-color: #0866c8;
+	height: 42px;
+	width: 120px;
+	border: none;
+	color: #fff;
+	font-size: 20px;
+}
+.profile{
+	text-align: center;
+}
+.profile ul{
+	list-style: none;
+}
+.profile .userinfo{
+	margin-top: 15px;
+}
+.profile ul li{
+	display: block;
+	padding: 5px;
+	text-align: left;
+	line-height: normal;
+	margin-bottom: 5px;
+	background-color: #0866c8;
+}
+.profile ul li:hover{
+	background-color:#05529e;
+	cursor: pointer;
+}
+.profile ul li a{
+	color: #fff;
+	background-image: url(../images/redes-sociales.png);
+	background-repeat: no-repeat;
+	padding-left: 30px;
+	font-size: 20px;
+}
+.profile ul li a:hover{
+	color: #fff;
+	text-decoration: none;
+}
+.correo{
+	background-position: 0 3px;
+}
+.skype{
+	background-position: 0 -18px;
+}
+.tiwtter{
+	background-position: 0 -40px;
+}
+.profile img{
+	background-color: #0866c8;
+	padding: 8px;
+}
+.profile img:hover{
+	background-color: #05529e;
+	cursor: pointer;
+}
+/*== footer == */
+footer{
+	padding: 30px;
+	background-color: #333;
+	color: #fff;
+}
+/* == dispositivos mobiles == */
+@media screen and (max-width: 979px){
+	body {
+		padding-top: 40px;
+	}
+	.navbar {
+		z-index: 999px
+	}
+	.subtitulo {
+		margin-top: 41px;
+	}
+	.bg-header {
+	    background-attachment: scroll;
+	}
+	.navbar .brand {
+		padding: 5px 5px 5px 25px;
+	}
+	.navbar .nav-collapse {
+		width: 100%;
+		float: none;
+	}
+	h1 {
+		font-size: 65px;
+		padding: 20px;
+		margin-top: 80px;
+	}
+	.lead {
+		font-size: 20px;
+		margin-top: 150px;
+		padding: 15px;
+	}
+	section{
+		padding-top: 0;
+	}
+	.bg-acerca {
+		padding: 30px;
+	}
+	.navbar  a:hover span{ background: #05529E; }
+}
+@media screen and (max-width: 768px){
+
+	section {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	h1 {
+		font-size: 2.5em;
+		padding: 20px;
+	}
+	.lead {
+		font-size: 1em;
+		padding: 10px;
+	}
+	#acerca-de-mi .tools {
+		margin: 5px;
+		float: left;
+	}
+	#acerca-de-mi h4 {
+		margin-left: 5px;
+	}
+}
+@media screen and (max-width: 450px){
+	h1 {
+	    font-size: 1.8em;
+	    margin-top: 20px;
+	}
+	.lead {
+	    margin-top: 50px;
+	}
+	.bg-header {
+	    height: auto;
+	    padding-bottom: 20px;
+	}
+	h2 {
+	    font-size: 27px !important;
+	}
+	.bg-acerca p {
+	    margin: 0 0 20px !important;
+	}
