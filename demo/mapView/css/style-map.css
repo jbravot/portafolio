@@ -1,0 +1,45 @@
+html ,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+.ui-content {
+    padding: 0;
+}
+#home, #home .ui-content, #map {
+    width: 100%;
+    height: 100%;
+}
+.olControlAttribution {
+    font-size: 10px;
+    bottom: 5px;
+    right: 5px;
+}
+#navigation {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    z-index: 1000;
+}
+#navigation .ui-btn-icon-notext {
+    display: block;
+}
+.ui-input-search{
+	margin: .5em;
+}
+#popup .ui-content{
+	height: auto !important;
+}
+#title{
+    display: none;
+}
+.ui-icon-locate {
+    background-image: url(../img/locate.png);
+}
+.ui-icon-layers {
+    background-image: url(../img/openlayers.png);
+}
+.ui-content .ui-listview-inset, #search_results {
+    margin: 1em;
+}

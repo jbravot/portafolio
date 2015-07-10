@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html xml:lang="es" lang="es">
+	<head>
+		<link rel="stylesheet" href="web/css/reset.css" type="text/css">
+	    <link rel="stylesheet" href="web/css/main.css" type="text/css">
+	    <link rel="stylesheet" href="web/css/form.css" type="text/css">
+		
+		<link rel="stylesheet" href="web/css/map_form.css" type="text/css">
+		<link rel="stylesheet" href="web/css/geosilk/geosilk.css" type="text/css" />
+		<link rel="stylesheet" href="web/js/wysiwyg/jquery.wysiwyg.css" type="text/css" media="screen" charset="utf-8" />
+		<link rel="stylesheet" href="web/js/fancyBox/source/jquery.fancybox.css?v=2.1.0" type="text/css" media="screen" />
+		<link rel="stylesheet" href="web/js/chosen/chosen.css" />
+
+		<!--[if IE 6]><script src="js/ie/DD_belatedPNG_0.0.8a.js"></script><script src="js/ie/png-fix.js"></script><![endif]-->
+		<!--[if (lt IE 9)&(!IEMobile 7)]>
+			<script src="js/ie/modernizr-2.0.6.min.js"></script>
+			<script src="js/ie/css3-mediaqueries.js"></script>
+		 <![endif]-->
+
+		<!-- meta tags -->
+		<meta charset="UTF-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>MapBuilding - Nueva Parada</title>
+		
+	</head>
+	<body>
+		<div id="page">
+			<div id="content">
+				<section id="main_map">
+					<div id="bar" class="bar panel-left panel-margin-right" style="">
+							<div class="fl cont-cambiar-icon">
+								<img id="iconMarker" src="web//images/marker/default.png" height="30px" class="clearfix fl">
+								<span id="name_icon" class="fl link-icon-span" >generico</span>
+								<a href="#cambiarIcono" class="fancy btn link-icon" >Cambiar Icono</a>
+								<div class="clear"></div>
+							</div>
+							<div class="fl separador"></div>
+							<div class="fl cont-btn-mostrar">
+								<a class="btn" href="http://jonathanbravo.com/demo/mapBuilding/"><span>Cancelar</span></a>
+							</div>
+						<div class="clear"></div>
+					</div>
+					<div id="map_canvas" class="noprint panel-left panel-margin-right"></div>
+				</section>
+				<section id="panel">
+							<div class="tab-header">
+						<div class="btn btn-Active" id="btn-guardar"><span>Guardar</span></div>
+						<div class="tab-header-titulo panel-left">
+							<span id="titulo-geometrico" class="titulo-geometrico">Anadir Nueva Parada</span >
+						</div>
+						<div class="clear"></div>
+					</div>
+					<div class="cont-form">
+						<form id="form" action="http://jonathanbravo.com/demo/mapBuilding/" method="post">
+								<div class="formSep">
+									<label>Ruta</label>
+									<select name="ruta" data-placeholder="Selecione una" style="width:350px;" class="chzn-select" tabindex="9" required >
+										<option value="1">Ruta Terminal</option>
+										<option value="2">Ruta ALborada</option>
+										<option value="9">Ruta 33</option>
+										<option value="10">ruta direccion</option>
+										<option value="11">Ruta Terminal - Av. Americas</option>
+										<option value="12">Ruta Alborada</option>
+									</select>
+								</div>
+								<div class="formSep">
+									<label>Nombre</label>
+									<input type="text" name="nombre" required  />
+								</div>
+								<div class="formSep">
+									<label>Direccion</label>
+									<input type="text" name="direccion" id="direccion" required />
+								</div>
+								<div class="formSep">
+									<label>Descripcion</label>
+									<textarea class="wysiwyngTxt" rows="3" cols="8" id="txtarea_descripcion" name="descripcion"></textarea>
+								</div>
+								<div class="formSep">
+									<label>Informacion adicional</label>
+									<textarea rows="3" cols="10" id="txtarea_info_adicional" name="info_adicional"></textarea>
+								</div>
+								<input type="hidden" name="icon" id="icon_path" value="web//images/marker/default.png" />
+								<textarea style="display:none"id="geometry_coord" readonly="readonly" rows="5" cols="40" name="geometria"></textarea>
+						</form>
+					</div>
+				</section>
+			</div>
+			<div class="page-footer"></div>
+			<!-- fancybox -->
+			<div style="display: none;" id="cambiarIcono">
+				<ul class="listaIconos">
+					<li>
+						<label for="defaultIcon">
+							<input name="iconSeleccioando" type="radio" onclick="cambiarIcono(this.value)" value="default" />
+							<img src="web/images/marker/default.png" />Default
+						</label>
+					</li>
+					<li>
+						<label for="restaurantIcon">
+							<input name="iconSeleccioando" type="radio" onclick="cambiarIcono(this.value)" value="restaurant" />
+							<img src="web/images/marker/restaurant.png" />Restaurante
+						</label>
+					</li>
+					<li>
+						<label for="coffeeIcon">
+							<input name="iconSeleccioando" type="radio" onclick="cambiarIcono(this.value)" value="coffee" />
+							<img src="web/images/marker/coffee.png" />Cafeteria
+						</label>
+					</li>
+					<li>
+						<label for="coffeeIcon">
+							<input name="iconSeleccioando" type="radio" onclick="cambiarIcono(this.value)" value="parking" />
+							<img src="web/images/marker/parking.png" />Parada de autobus
+						</label>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js" charset="utf-8"></script>
+		<script src="//maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=drawing" charset="utf-8"></script>
+		<script src="web/js/wysiwyg/jquery.wysiwyg.min.js" charset="utf-8"></script>
+		<script src="web/js/wysiwyg/controls/default.js" charset="utf-8"></script>
+		<script src="web/js/fancyBox/lib/jquery.mousewheel-3.0.6.pack.js" charset="utf-8"></script>
+		<script src="web/js/fancyBox/source/jquery.fancybox.pack.js" charset="utf-8"></script>
+		<script src="web/js/chosen/chosen.jquery.min.js" charset="utf-8"></script>
+		<script src="web/OpenLayers.js" charset="utf-8"></script>
+		<script src="web/lib/Editor/Lang/en.js" charset="utf-8"></script>
+		<script src="web/lib/loader.js" charset="utf-8"></script>
+		<script src="web/js/map_edit.min.js" charset="utf-8"></script>
+		<script  src="web/js/main_edit.min.js" charset="utf-8"></script>
+		<script>
+			$(document).ready(function () {
+				//FANCY
+				$(".fancy").fancybox({
+					fitToView	: false,
+					closeClick	: false,
+					title: 'Seleccione un Icono',
+					titlePosition  :'outside',
+					openEffect	: 'fade',
+					closeEffect	: 'elastic'
+				});
+				activardibujarParada();
+			});
+		</script>
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		      
+			ga('create', 'UA-41356210-1', 'jonathanbravo.com');
+			ga('send', 'pageview');
+		</script>
+	</body>
+</html>

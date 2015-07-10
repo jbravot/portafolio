@@ -5,7 +5,8 @@
     <title>Jonathan Bravo - Desarrollo y Diseño Web</title>
 
     <!-- metas -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description" content="Desarrollo y diseño Web, Este es el portafolio de Jonathan Bravo, desarrollor de aplicaciones web, diseño páginas web y mucho más." />
     <meta name="keywords" content="diseño web, paginas web, website, desarrollo web, ecuador, guayaquil" />
     <meta name="author" content="Jonathan Bravo" />
@@ -37,7 +38,7 @@
     <meta name="geo.position" content="-2.183333;-79.883333" />
     <meta name="geo.placename" content="EC" />
     <meta name="geo.region" content="EC-G" />
-    
+
     <!-- Twitter -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@jbravot">
@@ -48,8 +49,11 @@
     <meta name="twitter:domain" content="jonathanbravo.com">
 
     <!-- styles -->
-    <link href="web/bootstrap/css/bootstrap.min.css?v=1.4" rel="stylesheet" media="all" />
-    <link href="web/css/main.css?v=1.8.634" rel="stylesheet" media="all" />
+    <link href="web/bootstrap/css/bootstrap.min.css?v=3.0" rel="stylesheet" media="screen" />
+
+    <link href="web/font-awesome/css/font-awesome.min.css?v=2.0" rel="stylesheet" media="screen" />
+    <link href="web/css/main.css?v=2.9.8" rel="stylesheet" media="screen" />
+
 
     <!-- favicon and touch icons -->
     <link rel="apple-touch-icon" href="web/images/logo/ios/icon.png" />
@@ -58,320 +62,662 @@
     <link rel="apple-touch-icon" sizes="144x144" href="web/images/logo/ios/Icon-72@2x.png" />
     <link rel="icon" type="image/png" href="web/images/logo/favicon.png" />
 
-    <!--[if (lt IE 9)&(!IEMobile 7)]>
-        <script src="web/js/ie/modernizr-2.0.6.min.js"></script>
-        <script src="web/js/ie/css3-mediaqueries.js"></script>
+    <!--[if lt IE 9]>
+      <script src="web/js/ie/html5shiv.js"></script>
+      <script src="web/js/ie/respond.min.js"></script>
     <![endif]-->
 
-    <!--hide all elements y show preloader -->
-    <script charset="utf-8" >
-      document.documentElement.className += 'js';
-    </script>
-
   </head>
-  <body data-spy="scroll" data-target=".navbar">
-    <div id="loading_layer" style="display:none">
-      <img src="web/images/website-loader.gif" alt="cargando..." />
-    </div>
-    <!-- Navbar -->
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="brand logo" href="/"><span class="visible-desktop" data-hover="Jonathan Bravo">Jonathan Bravo</span><span class="hidden-desktop">Jonathan Bravo</span></a>
-            <div class="nav-collapse collapse">
-                <ul class="nav">
-                    <li class="active">
-                      <a href="#inicio">
-                        <span data-hover="Inicio">Inicio</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#portafolio">
-                        <span class="visible-desktop" data-hover="Portafolio">Portafolio</span>
-                        <span class="hidden-desktop">Portafolio</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#acerca-de-mi">
-                        <span class="visible-desktop" data-hover="Acerca de mí">Acerca de mí</span>
-                        <span class="hidden-desktop">Acerca de mí</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#diseno-web">
-                        <span class="visible-desktop" data-hover="Diseño Web">Diseño Web</span>
-                        <span class="hidden-desktop">Diseño Web</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#contacto">
-                        <span class="visible-desktop" data-hover="Contacto">Contacto</span>
-                        <span class="hidden-desktop">Contacto</span>
-                      </a>
-                    </li>
-                </ul>
+  <body class="navidad" data-spy="scroll" data-target="#navbar">
+    <!--
+    <div id="nieve"></div>
+	-->
+    <div id="main">
+      <!-- Navbar -->
+      <nav id="navbar" class="navbar navbar-default menu-offcanvas navbar-fixed-top" role="navigation">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#inicio">Jonathan Bravo</a>
+        </div>
+        <div>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active">
+              <a href="#inicio">
+                <i class="fa fa-code hidden-lg hidden-md "></i> Inicio
+              </a>
+            </li>
+            <li>
+              <a href="#portafolio">
+                <i class="hidden-lg hidden-md fa fa-briefcase"></i> Trabajos
+              </a>
+            </li>
+            <li>
+              <a href="#tecnologias">
+                <i class="hidden-lg hidden-md fa fa-cogs"></i> Técnologias
+              </a>
+            </li>
+            <li>
+              <a href="#diseno-web">
+                <i class="hidden-lg hidden-md fa fa-pencil-square-o"></i> Diseño Web
+              </a>
+            </li>
+            <li>
+              <a href="#contacto">
+                <i class="hidden-lg hidden-md fa fa-envelope"></i> Contacto
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <nav id="navbar-movil" class="navbar navbar-default navbar-mobile hidden-lg hidden-md navbar-fixed-top">
+        <div class="navbar-header hidden-lg hidden-md">
+          <ul class="nav-social">
+            <li class="nav-menu">
+              <div class="toggle-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </li>
+            <li class="nav-logo">
+              <a class="logo" href="#inicio">
+                <img title="Jonathan Bravo" alt="Jonathan Bravo" src="web/images/logo/logo.png" />
+              </a>
+            </li>
+            <li class="social">
+              <a href="http://twitter.com/jbravot" target="_blank" title="@jbravot">
+                <i class="twitter"></i>
+              </a>
+            </li>
+            <li class="social">
+              <a href="mailto:info@jonathanbravo.com" target="_blank" title="info@jonathanbravo.com">
+                <i class="correo"></i>
+              </a>
+            </li>
+            <li class="social">
+              <a href="skype:jonathan_bt?call" target="_blank" title="jonathan_bt">
+                <i class="tel"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!-- End Navbar -->
+      <div class="main-container">
+        <!-- Header -->
+        <header id="inicio">
+          <div class="header-movil hidden-lg hidden-md">
+            <img class="bg-header-movil" src="web/images/slider/bg2.jpg">
+            <div class="title title_1">
+              <strong>Desarrollo y Diseño Web</strong>
             </div>
-        </div>
-      </div>
-    </div>
-    <!-- End Navbar -->
-
-    <!-- Header -->
-    <header id="inicio">
-      <div class="bg-header">
-        <div class="container text-center">
-          <h1 id="title-header" class="title-header move-r ">Desarrollo y Diseño Web</h1>
-          <p id="subtitle-header" class="title-header move-l lead ">
-            Bienvenidos al portafolio sobre desarrollo web freelance de Jonathan Bravo
-          </p>
-        </div>
-      </div>
-    </header>
-    <!-- End Header -->
-
-    <!-- Portafolio -->
-    <section id="portafolio" class="gris">
-      <div class="container">
-        <div class="row subtitulo">
-          <div class="span12">
-            <h2 class="menu-icon portafolio-icon">Mis Trabajos</h2>
-          </div>
-        </div>
-        <div class="row">
-          <div class="span12">
-            <div id="portafolio-bx" style="display: none;"></div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="span9 offset1">
-            <ul id="portafolio-thumbnails" class="thumbnails">
-              <li class="span3">
-                <a href="web/portafolio/tooltest/data.html?v=1.7" target="_blank" class="thumbnail">
-                  <img title="Click para ver el detalle" alt="Doing - Web Site" src="web/portafolio/tooltest/tooltest-website.jpg" />
-                  <div class="titulo-portafolio">
-                    <h4>ToolTest - SEO</h4>
-                  </div>
-                </a>
-              </li>
-			  <li class="span3">
-                <a href="web/portafolio/rey-park/data.html?v=1.5" target="_blank" class="thumbnail">
-                  <img title="Click para ver el detalle" alt="Doing - Web Site" src="web/portafolio/rey-park/rey-park-website.jpg" />
-                  <div class="titulo-portafolio">
-                    <h4>Rey Park - Web Site</h4>
-                  </div>
-                </a>
-              </li>
-              <li class="span3">
-                <a href="web/portafolio/doing/data.html?v=1.6" target="_blank" class="thumbnail">
-                  <img title="Click para ver el detalle" alt="Doing - Web Site" src="web/portafolio/doing/doing-website.jpg" />
-                  <div class="titulo-portafolio">
-                    <h4>Doing - Web Site</h4>
-                  </div>
-                </a>
-              </li>
-              <li class="span3">
-                <a href="web/portafolio/mapBuilding/data.html?v=1.6" target="_blank" class="thumbnail">
-                  <img title="Click para ver el detalle" alt="mapBuilding - demo" src="web/portafolio/mapBuilding/mapBuilding.jpg" />
-                  <div class="titulo-portafolio">
-                    <h4>MapBuilding - Demo</h4>
-                  </div>
-                </a>
-              </li>
-              <li class="span3">
-                <a href="web/portafolio/mapView/data.html?v=1.6" target="_blank" class="thumbnail">
-                  <img title="Click para ver el detalle" alt="mapView - demo" src="web/portafolio/mapView/mapView.jpg" />
-                  <div class="titulo-portafolio">
-                    <h4>MapView - Demo</h4>
-                  </div>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- End Portafolio -->
-
-    <!-- Acerca de mi -->
-    <section id="acerca-de-mi">
-      <div class="container">
-        <div class="row subtitulo">
-          <div class="span12">
-            <h2 class="menu-icon acerca-icon">Acerca de mí</h2>
-          </div>
-        </div>
-        <div class="row">
-          <div class="span4 bg-acerca text-center vcard">
-            <h4 class="text-left">Quien soy¿?</h4>
-            <p class="text-left">
-              Hola soy <span class="fn">Jonathan Bravo</span>, desarrollador web de <span class="adr"><span class="locality">Guayaquil, Ecuador.</span></span>
-            </p>
-            <p class="text-left">
-              Egresado de <span class="title"><abbr title="Ingenieria">Ing.</abbr> en Computación</span> de la <abbr title="Escuela Superior Politecnica del Litoral" class="initialism">ESPOL</abbr>, aunque mi mayor fortaleza es ser autodidacta.
-            </p>
-            <p class="text-left">
-             Desde el 2010 llevo trabajando como desarrollador web, actualmente me desempeño como profesional independiente (Freelance).
-            </p>
-          </div>
-          <div class="span7 habilidades">
-              <h4>Habilidades</h4>
-              <div title="Framework Python" class="django tools">Django - Framework Python</div>
-              <div title="Lenguaje de Programación" class="php tools">PHP - Lenguaje de Programación</div>
-              <div title="Gestor de Contenido" class="drupal tools">Drupal - Gestor de Contenido</div>
-              <div title="Framework JavaScript" class="jquery tools">Jquery - Framework JavaScript</div>
-              <div title="Framework Mapas" class="openlayers tools">Openlayers - Framework Mapas</div>
-              <div title="Base de Datos" class="postgres tools">Postgres - Base de Datos</div>
-              <div title="Framework PHP" class="symfony tools">Symfony - Framework PHP</div>
-              <div title="Lenguaje de Programación" class="html tools">HTML - Lenguaje de Programación</div>
-              <div title="Información Geográfica" class="openstreetmap tools">Openstreetmap - Información Geográfica</div>
-              <div title="Framework Mapas" class="google-maps tools">Google Maps - Framework Mapas</div>
-              <div title="Lenguaje de Programación" class="css tools">CSS - Lenguaje de Programación</div>
-              <div title="Base de Datos" class="mysql tools">MYSQL - Base de Datos</div>
-              <div title="Sistema Operativo" class="linux tools">Linux - Sistema Operativo</div>
-              <div title="Lenguaje de Programación" class="java tools">Java - Lenguaje de Programación</div>
-              <div title="Gestor de Contenido" class="joomla tools">Joomla - Gestor de Contenido</div>
-	      <div title="Framework CSS" class="bootstrap tools">Bootstrap - Framework CSS</div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- End Acerca de mi -->
-
-
-    <!-- Disenio web -->
-    <section id="diseno-web">
-      <div class="container">
-        <div class="row subtitulo">
-          <div class="span12">
-            <h2 class="menu-icon diseno-icon visible-desktop">Soluciones Web a tu Alcance!</h2>
-            <h2 class="menu-icon diseno-icon hidden-desktop">Diseño Web</h2>
-          </div>
-        </div>
-        <div class="row">
-          <div class="span12 disenio-msj">
-            <p>
-              El servicio de diseño y creación de sitios web Profesionales está especialmente pensado para pequeños negocios o personas que necesitan tener un sitio web de buena calidad, moderno y que se ajuste a sus necesidades pero sin incurrir en un elevado desembolso de dinero.
-            </p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="offset1 span12">
-            <ul class="span3 pricing-table">
-              <li class="plan">PLAN BASICO</li>
-              <li class="precio bg-gris">U$D 465.00</li>
-              <li class="descripcion">
-                Indicado para personas y pequeñas empresas que desean iniciar su presencia en internet.
-              </li>
-              <li class="disenio-item bg-gris">Hasta <strong>10</strong> Páginas</li>
-              <li class="disenio-item">Formulario de contactos</li>
-              <li class="disenio-item bg-gris"><strong>2</strong> propuestas</li>
-              <li class="disenio-item">Sistema Autoadministrable</li>
-              <li class="disenio-item bg-gris">Estadísticas de visitas</li>
-              <li class="disenio-item"><strong>Incluye:</strong> Hosting y Dominio</li>
-              <li class="disenio-item bg-gris"><strong>Entrega:</strong> de 2 a 3 semanas</li>
-            </ul>
-            <ul class="span3 pricing-table">
-              <li class="plan">PLAN COMERCIAL</li>
-              <li class="precio bg-gris">U$D 570.00</li>
-              <li class="descripcion">
-                Indicado para pequeñas empresas que quieren acceder a Internet con un Diseño Web Profesional.
-              </li>
-              <li class="disenio-item bg-gris">Hasta <strong>20</strong> Páginas</li>
-              <li class="disenio-item">Formulario de contactos</li>
-              <li class="disenio-item bg-gris"><strong>2</strong> propuestas</li>
-              <li class="disenio-item">Integración con Redes Sociales</li>
-              <li class="disenio-item bg-gris">Sistema Autoadministrable</li>
-              <li class="disenio-item">Estadísticas de visitas</li>
-              <li class="disenio-item bg-gris"><strong>Entrega:</strong> de 3 a 4 semanas</li>
-            </ul>
-            <ul class="span3 pricing-table">
-              <li class="plan">PLAN EMPRESARIAL</li>
-              <li class="precio bg-gris">U$D 750.00</li>
-              <li class="descripcion">Indicado para medianas empresas que quieren acceder a Internet con un Diseño Web Profesional.</li>
-              <li class="disenio-item bg-gris">Hasta <strong>20</strong> Páginas</li>
-              <li class="disenio-item">Formulario de contactos</li>
-              <li class="disenio-item bg-gris"><strong>2</strong> propuestas</li>
-              <li class="disenio-item">Integración con Redes Sociales</li>
-              <li class="disenio-item bg-gris">Sección de Noticias</li>
-              <li class="disenio-item">Catálogo de productos</li>
-              <li class="disenio-item bg-gris">Sistema Autoadministrable</li>
-              <li class="disenio-item">Estadísticas de visitas</li>
-              <li class="disenio-item bg-gris"><strong>Entrega:</strong> de 6 a 8 semanas</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- End Disenio web -->
-
-    <!-- Contacto -->
-    <section id="contacto" class="gris">
-      <div class="container">
-        <div class="row subtitulo">
-          <div class="span12">
-            <h2 class="menu-icon contacto-icon">Contacto</h2>
-          </div>
-        </div>
-        <div class="row">
-          <div class="span5 offset1">
-            <div id="msj" class="hide alert alert-success">
-              <span></span>
+            <div class="title title_2">
+              Su web puede convertirse en su principal herramienta de trabajo
             </div>
-            <form id="form-contact" class="contac" action="#" method="post">
-              <div>
-                <input title="Ingrese su Nombre Completo" type="text" required id="inputNombre" placeholder="Nombre Completo" name="nombre" />
-              </div>
-              <div>
-                <input title="Ingrese su Correo Electronico" type="email" required id="inputEmail" placeholder="Email@correo.com" name="correo" />
-              </div>
-              <div>
-                <textarea title="Ingrese su Mensaje" id="inputMensaje" required rows="9" placeholder="Mensaje..." name="msg"></textarea>
-              </div>
-              <div >
-                <button type="submit" class="btn-plain">Enviar</button>
-              </div>
-            </form>
+            <div class="subtitle subtitle_1">
+                la cual le ayudará a aumentar sus ventas y a promocionar su empresa.
+            </div>
           </div>
-          <div class="span5">
-            <div class="profile">
-              <a rel="author" target="_blank" href="https://plus.google.com/115831373762254405150/posts"><img title="Jonathan Bravo" alt="Jonathan Bravo" src="web/images/jonathan-bravo.jpg" /></a>
-              <div class="userinfo">
-                <ul>
-                  <li>
-                    <a class="correo" href="mailito:info@jonathanbravo.com">info@jonathanbravo.com</a>
+          <div id="sequence" class="hidden-sm hidden-xs">
+            <img class="sequence-prev" src="web/images/slider/bt-prev.png" alt="Anterior" />
+            <img class="sequence-next" src="web/images/slider/bt-next.png" alt="Siguiente" />
+            <ul class="sequence-canvas">
+                <li class="frame1 animate-in">
+                  <img class="bg-slider" src="web/images/slider/bg.jpg">
+                  <div class="title textFromLeft title_1">
+                     ¿Tú Web esta <strong>Optimizada</strong>
+                  </div>
+                  <div class="title textFromLeft title_2">
+                      Para <strong>Moviles?</strong>
+                  </div>
+                  <div class="subtitle textFromLeft subtitle_1">
+                      En Ecuador 2,7 millones de personas se conectan a través de teléfonos móviles*
+                  </div>
+                  <div class="subtitle textFromLeft subtitle_1 subtitle_fuente">
+                      <a rel="nofollow" target="_blank" href="http://www.hoy.com.ec/noticias-ecuador/ecuador-suma-2-7-millones-de-usuarios-de-internet-en-celulares-durante-2012-564428.html">
+                        *Fuente
+                      </a>
+                  </div>
+                  <img class="fromTop desktop" src="web/images/slider/desktop.png">
+                  <img class="fromTop tablet" src="web/images/slider/tablet.png">
+                  <img class="fromTop smartphone" src="web/images/slider/smartphone.png">
+                </li>
+                <li class="frame2">
+                  <img class="bg-slider" src="web/images/slider/bg2.jpg">
+                  <div class="title textFromRight title_2">
+                     ¿No tienes una <strong>Web</strong>?
+                  </div>
+                  <div class="subtitle textFromRight subtitle_1">
+                     Su web puede convertirse en su principal herramienta de trabajo,<br>la cual le ayudará a aumentar sus ventas y a promocionar su empresa.
+                  </div>
+                  <img class="fromBottom" src="web/images/slider/web-site.png">
+                  <img class="fromBottom mini-site" src="web/images/slider/web-site.png">
+                </li>
+            </ul>
+        </div>
+        </header>
+        <!-- End Header -->
+
+        <!-- Portafolio -->
+        <section id="portafolio" class="gris">
+          <div class="container">
+            <div class="row subtitulo">
+              <div class="col-md-12">
+                <h2 class="menu-icon portafolio-icon">Trabajos</h2>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div id="portafolio-bx" class="clearfix" style="display: none;"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12 col-md-12">
+                <ul id="portafolio-thumbnails">
+                <li class="col-sm-6 col-md-4">
+                    <article class="thumbnail">
+                      <a href="web/portafolio/rey-park-w/data.html?v=1.7" target="_blank" class="thumbnail" title="Click para ver el detalle" >
+                        <img title="Rey Park Halloween - Web Site" alt="Rey Park Halloween - Web Site" src="web/portafolio/rey-park-w/rey-park-w-website.jpg" />
+                        <div class="caption">
+                          <h4>Rey Park Halloween</h4>
+                          <span class="proyecto">Web Site</span>
+                        </div>
+                      </a>
+                        <div class="caption">
+                          <div class="clearfix">
+                            <span class="fecha pull-left">30/10/2014</span>
+                            <span class="link pull-right">
+                              <a rel="nofollow" target="_blank" href="http://www.reypark.ec/">
+                                <i class="glyphicon glyphicon-link"></i>
+                                reypark.ec
+                              </a>
+                            </span>
+                          </div>
+                        </div>
+                    </article>
                   </li>
-                  <li>
-                    <a class="tiwtter" href="http://twitter.com/jbravot">@jbravot</a>
+		<li class="col-sm-6 col-md-4">
+                    <article class="thumbnail">
+                      <a href="web/portafolio/tarpuysoft-crm/data.html?v=1.7" target="_blank" class="thumbnail" title="Click para ver el detalle" >
+                        <img title="Tarpuysoft - CRM" alt="Tarpuysoft - CRM" src="web/portafolio/tarpuysoft-crm/tarpuysoft-crm.jpg" />
+                        <div class="caption">
+                          <h4>Tarpuysoft</h4>
+                          <span class="proyecto">CRM</span>
+                        </div>
+                      </a>
+                        <div class="caption">
+                          <div class="clearfix">
+                            <span class="fecha pull-left">15/04/2014</span>
+                            <span class="link pull-right">
+                              <a rel="nofollow" target="_blank" href="http://jbravot.pythonanywhere.com/">
+                                <i class="glyphicon glyphicon-link"></i>
+                                crm.tarpuysoft.com
+                              </a>
+                            </span>
+                          </div>
+                        </div>
+                    </article>
                   </li>
-                   <li>
-                    <a class="skype" href="skype:jonathan_bt?call">jonathan_bt</a>
-                   </li>
+				  <li class="col-sm-6 col-md-4">
+                    <article class="thumbnail">
+                      <a href="web/portafolio/tarpuysoft/data.html?v=1.7" target="_blank" class="thumbnail" title="Click para ver el detalle" >
+                        <img title="Tarpuysoft - Web Site" alt="Tarpuysoft - Web Site" src="web/portafolio/tarpuysoft/tarpuysoft-website.jpg" />
+                        <div class="caption">
+                          <h4>Tarpuysoft</h4>
+                          <span class="proyecto">Web Site</span>
+                        </div>
+                      </a>
+                        <div class="caption">
+                          <div class="clearfix">
+                            <span class="fecha pull-left">15/04/2014</span>
+                            <span class="link pull-right">
+                              <a rel="nofollow" target="_blank" href="http://www.tarpuysoft.com/">
+                                <i class="glyphicon glyphicon-link"></i>
+                                tarpuysoft.com
+                              </a>
+                            </span>
+                          </div>
+                        </div>
+                    </article>
+                  </li>
+                  <li class="col-sm-6 col-md-4">
+                    <article class="thumbnail">
+                      <a href="web/portafolio/perfosolut/data.html?v=1.7" target="_blank" class="thumbnail" title="Click para ver el detalle" >
+                        <img title="Perfosolut - Web Site" alt="Perfosolut - Web Site" src="web/portafolio/perfosolut/perfosolut-website.jpg" />
+                        <div class="caption">
+                          <h4>PerfoSolut</h4>
+                          <span class="proyecto">Web Site</span>
+                        </div>
+                      </a>
+                        <div class="caption">
+                          <div class="clearfix">
+                            <span class="fecha pull-left">8/11/2013</span>
+                            <span class="link pull-right">
+                              <a rel="nofollow" target="_blank" href="http://www.perfosolut.com.ec/">
+                                <i class="glyphicon glyphicon-link"></i>
+                                perfosolut.com.ec
+                              </a>
+                            </span>
+                          </div>
+                        </div>
+                    </article>
+                  </li>
+                  <li class="col-sm-6 col-md-4">
+                    <article class="thumbnail">
+                      <a href="web/portafolio/high-track/data.html?v=1.7" target="_blank" class="thumbnail" title="Click para ver el detalle" >
+                        <img title="High Track - Web Site" alt="High Track - Web Site" src="web/portafolio/high-track/high-track-website.jpg" />
+                        <div class="caption">
+                          <h4>High Track</h4>
+                          <span class="proyecto">Web Site</span>
+                        </div>
+                      </a>
+                        <div class="caption">
+                          <div class="clearfix">
+                            <span class="fecha pull-left">15/10/2013</span>
+                            <span class="link pull-right">
+                              <a rel="nofollow" target="_blank" href="http://www.high-track.com/">
+                                <i class="glyphicon glyphicon-link"></i>
+                                high-track.com
+                              </a>
+                            </span>
+                          </div>
+                        </div>
+                    </article>
+                  </li>
+                  <li class="col-sm-6 col-md-4">
+                    <article class="thumbnail">
+                      <a href="web/portafolio/tooltest/data.html?v=1.8" target="_blank" class="thumbnail" title="Click para ver el detalle" >
+                        <img title="Doing - Web Site" alt="Doing - Web Site" src="web/portafolio/tooltest/tooltest-website.jpg" />
+                        <div class="caption">
+                          <h4>High Track</h4>
+                          <span class="proyecto">Web App - SEO</span>
+                        </div>
+                      </a>
+                        <div class="caption">
+                          <div class="clearfix">
+                            <span class="fecha pull-left">02/08/2013</span>
+                            <span class="link pull-right">
+                              <a rel="nofollow" target="_blank" href="http://seo-tooltest.appspot.com/">
+                                <i class="glyphicon glyphicon-link"></i>
+                                seo-tooltest.appspot.com
+                              </a>
+                            </span>
+                          </div>
+                        </div>
+                    </article>
+                  </li>
+                  <li class="col-sm-6 col-md-4">
+                    <article class="thumbnail">
+                      <a href="web/portafolio/rey-park/data.html?v=1.7" target="_blank" class="thumbnail" title="Click para ver el detalle" >
+                        <img title="Rey Park - Web Site" alt="Rey Park - Web Site" src="web/portafolio/rey-park/rey-park-website.jpg" />
+                        <div class="caption">
+                          <h4>Rey Park</h4>
+                          <span class="proyecto">Web Site</span>
+                        </div>
+                      </a>
+                        <div class="caption">
+                          <div class="clearfix">
+                            <span class="fecha pull-left">26/07/2013</span>
+                            <span class="link pull-right">
+                              <a rel="nofollow" target="_blank" href="http://www.reypark.ec/">
+                                <i class="glyphicon glyphicon-link"></i>
+                                reypark.ec
+                              </a>
+                            </span>
+                          </div>
+                        </div>
+                    </article>
+                  </li>
+                  <li class="col-sm-6 col-md-4">
+                    <article class="thumbnail">
+                      <a href="web/portafolio/doing/data.html?v=1.7" target="_blank" class="thumbnail" title="Click para ver el detalle" >
+                        <img title="Doing - Web Site" alt="Doing - Web Site" src="web/portafolio/doing/doing-website.jpg" />
+                        <div class="caption">
+                          <h4>Doing</h4>
+                          <span class="proyecto">Web Site</span>
+                        </div>
+                      </a>
+                        <div class="caption">
+                          <div class="clearfix">
+                            <span class="fecha pull-left">10/01/2013</span>
+                            <span class="link pull-right">
+                              <a rel="nofollow" target="_blank" href="http://www.doing.com.ec/">
+                                <i class="glyphicon glyphicon-link"></i>
+                                doing.com.ec
+                              </a>
+                            </span>
+                          </div>
+                        </div>
+                    </article>
+                  </li>
+                  <li class="col-sm-6 col-md-4">
+                    <article class="thumbnail">
+                      <a href="web/portafolio/mapBuilding/data.html?v=1.7" target="_blank" class="thumbnail" title="Click para ver el detalle" >
+                        <img title="mapBuilding - demo" alt="mapBuilding - demo" src="web/portafolio/mapBuilding/mapBuilding.jpg" />
+                        <div class="caption">
+                          <h4>MapBuilding</h4>
+                          <span class="proyecto">Web App - Demo</span>
+                        </div>
+                      </a>
+                        <div class="caption">
+                          <div class="clearfix">
+                            <span class="fecha pull-left">10/01/2013</span>
+                            <span class="link pull-right">
+                              <a rel="nofollow" target="_blank" href="http://www.jonathanbravo.com/demo/mapBuilding/">
+                                <i class="glyphicon glyphicon-link"></i>
+                                mapBuilding
+                              </a>
+                            </span>
+                          </div>
+                        </div>
+                    </article>
+                  </li>
+                  <li class="col-sm-6 col-md-4">
+                    <article class="thumbnail">
+                      <a href="web/portafolio/mapView/data.html?v=1.7" target="_blank" class="thumbnail" title="Click para ver el detalle" >
+                        <img title="mapView - demo" alt="mapView - demo" src="web/portafolio/mapView/mapView.jpg" />
+                        <div class="caption">
+                          <h4>MapView</h4>
+                          <span class="proyecto">Web App - Demo</span>
+                        </div>
+                      </a>
+                        <div class="caption">
+                          <div class="clearfix">
+                            <span class="fecha pull-left">10/11/2012</span>
+                            <span class="link pull-right">
+                              <a rel="nofollow" target="_blank" href="http://www.jonathanbravo.com/demo/mapView/">
+                                <i class="glyphicon glyphicon-link"></i>
+                                MapView
+                              </a>
+                            </span>
+                          </div>
+                        </div>
+                    </article>
+                  </li>
                 </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- End Portafolio -->
+
+        <!-- Tecnologias -->
+        <section id="tecnologias">
+          <div class="container">
+            <div class="row subtitulo">
+              <div class="col-md-12">
+                <h2 class="menu-icon acerca-icon">Técnologias</h2>
+              </div>
+            </div>
+            <div class="row col-md-offset-3">
+              <div class="col-xs-6 col-sm-6 col-md-2 container-tools">
+                <div title="Framework Python" class="django tools"></div>
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-2 container-tools last-sm">
+                <div title="Lenguaje de Programación" class="php tools"></div>
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-2 container-tools">
+                <div title="Gestor de Contenido" class="drupal tools"></div>
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-2 container-tools last">
+                <div title="Framework JavaScript" class="jquery tools"></div>
+              </div>
+            </div>
+            <div class="row col-md-offset-3">
+              <div class="col-xs-6 col-sm-6 col-md-2 container-tools">
+                <div title="Framework Mapas" class="openlayers tools"></div>
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-2 container-tools last-sm">
+                <div title="Base de Datos" class="postgres tools"></div>
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-2 container-tools">
+                <div title="Framework PHP" class="symfony tools"></div>
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-2 container-tools last">
+                <div title="Lenguaje de Programación" class="html tools"></div>
+              </div>
+            </div>
+            <div class="row col-md-offset-3">
+              <div class="col-xs-6 col-sm-6 col-md-2 container-tools">
+                <div title="Información Geográfica" class="openstreetmap tools"></div>
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-2 container-tools last-sm">
+                <div title="Framework Mapas" class="google-maps tools"></div>
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-2 container-tools">
+                <div title="Lenguaje de Programación" class="css tools"></div>
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-2 container-tools last">
+                <div title="Base de Datos" class="mysql tools"></div>
+              </div>
+            </div>
+            <div class="row last col-md-offset-3">
+              <div class="col-xs-6 col-sm-6 col-md-2 container-tools">
+                <div title="Sistema Operativo" class="linux tools"></div>
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-2 container-tools last-sm">
+                <div title="Lenguaje de Programación" class="java tools"></div>
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-2 container-tools">
+                <div title="Gestor de Contenido" class="joomla tools"></div>
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-2 container-tools last">
+                <div title="Framework CSS" class="bootstrap tools"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- End Tecnologias -->
+        <!-- Disenio web -->
+        <section id="diseno-web">
+          <div class="container">
+            <div class="row subtitulo">
+              <div class="col-md-12">
+                <h2 class="menu-icon diseno-icon visible-desktop hidden-lg hidden-md">Diseño Web</h2>
+                <h2 class="menu-icon diseno-icon visible-desktop hidden-xs hidden-sm">Diseño Web a tu Alcance!</h2>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 disenio-msj">
+                <p>
+                  El servicio de diseño y creación de sitios web Profesionales está especialmente pensado para pequeños negocios o personas que necesitan tener un sitio web de buena calidad, moderno y que se ajuste a sus necesidades pero sin incurrir en un elevado desembolso de dinero.
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="">
+                <div class="col-sm-6 col-md-4">
+                  <ul class="pricing-table">
+                    <li class="plan">
+                      <h4>PLAN BASICO</h4>
+                      <div class="precio">
+                        <span>$ 465</span>
+                      </div>
+                    </li>
+                    <li class="bg-gris header-bottom"></li>
+                    <li class="descripcion">
+                      Indicado para personas y pequeñas empresas que desean iniciar su presencia en internet.
+                    </li>
+                    <li class="disenio-item bg-gris">Hasta <strong>10</strong> Páginas</li>
+                    <li class="disenio-item">Formulario de contactos</li>
+                    <li class="disenio-item bg-gris"><strong>2</strong> propuestas</li>
+                    <li class="disenio-item">Sistema Autoadministrable</li>
+                    <li class="disenio-item bg-gris">Estadísticas de visitas</li>
+                    <li class="disenio-item"><strong>Incluye:</strong> Hosting y Dominio</li>
+                    <li class="disenio-item bg-gris"><strong>Entrega:</strong> de 2 a 3 semanas</li>
+                  </ul>
                 </div>
+                <div class="col-sm-6 col-md-4">
+                  <ul class="pricing-table pricing-table-hover">
+                    <li class="plan">
+                      <h4>PLAN COMERCIAL</h4>
+                      <div class="precio">
+                        <span>$ 570</span>
+                      </div>
+                    </li>
+                    <li class="bg-gris header-bottom"></li>
+                    <li class="descripcion">
+                      Indicado para pequeñas empresas que quieren acceder a Internet con un Diseño Web Profesional.
+                    </li>
+                    <li class="disenio-item bg-gris">Hasta <strong>20</strong> Páginas</li>
+                    <li class="disenio-item">Formulario de contactos</li>
+                    <li class="disenio-item bg-gris"><strong>2</strong> propuestas</li>
+                    <li class="disenio-item">Integración con Redes Sociales</li>
+                    <li class="disenio-item bg-gris">Sistema Autoadministrable</li>
+                    <li class="disenio-item">Estadísticas de visitas</li>
+                    <li class="disenio-item bg-gris"><strong>Entrega:</strong> de 3 a 4 semanas</li>
+                  </ul>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                  <ul class="pricing-table">
+                    <li class="plan">
+                      <h4>PLAN EMPRESARIAL</h4>
+                      <div class="precio">
+                        <span>$ 750</span>
+                      </div>
+                    </li>
+                    <li class="bg-gris header-bottom"></li>
+                    <li class="descripcion">Indicado para medianas empresas que quieren acceder a Internet con un Diseño Web Profesional.</li>
+                    <li class="disenio-item bg-gris">Hasta <strong>20</strong> Páginas</li>
+                    <li class="disenio-item">Formulario de contactos</li>
+                    <li class="disenio-item bg-gris"><strong>2</strong> propuestas</li>
+                    <li class="disenio-item">Integración con Redes Sociales</li>
+                    <li class="disenio-item bg-gris">Sección de Noticias</li>
+                    <li class="disenio-item">Catálogo de productos</li>
+                    <li class="disenio-item bg-gris">Sistema Autoadministrable</li>
+                    <li class="disenio-item">Estadísticas de visitas</li>
+                    <li class="disenio-item bg-gris"><strong>Entrega:</strong> de 6 a 8 semanas</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-    <!-- End Contacto -->
+        </section>
+        <!-- End Disenio web -->
 
-    <!-- Footer -->
-    <footer>
-      <div class="row">
-        <div class="span12 text-center">
-          <span>Copyleft 2013 <span class="logo">Jonathan Bravo</span></span>
-        </div>
+        <!-- Contacto -->
+        <section id="contacto" class="gris">
+          <div class="container">
+            <div class="row subtitulo">
+              <div class="col-md-12">
+                <h2 class="menu-icon contacto-icon">Contacto</h2>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6 col-md-5 col-md-offset-1">
+                <div id="msj" class="hide alert alert-success">
+                  <span></span>
+                </div>
+                <form id="form-contact" class="contac" role="form" action="#" method="post">
+                  <div class="form-group">
+                    <input title="Ingrese su Nombre Completo" type="text" required id="inputNombre" placeholder="Nombre Completo" name="nombre" />
+                  </div>
+                  <div class="form-group">
+                    <input title="Ingrese su Correo Electronico" type="email" required id="inputEmail" placeholder="Email@correo.com" name="correo" />
+                  </div>
+                  <div class="form-group">
+                    <textarea title="Ingrese su Mensaje" id="inputMensaje" required rows="9" placeholder="Mensaje..." name="msg"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <button type="submit" class="btn-plain">Enviar</button>
+                  </div>
+                </form>
+              </div>
+              <div class="col-sm-6 col-md-5">
+                <div class="profile">
+                  <a rel="author" target="_blank" href="https://plus.google.com/115831373762254405150/posts"><img title="Jonathan Bravo" alt="Jonathan Bravo" src="web/images/jonathan-bravo.jpg" /></a>
+                  <div class="userinfo">
+                    <ul>
+                      <li>
+                        <a target="_blank" href="mailito:info@jonathanbravo.com" title="Enviame un correo"><i class="fa fa-envelope-o"></i> info@jonathanbravo.com</a>
+                      </li>
+                      <li>
+                        <a target="_blank" href="skype:jonathan_bt?call" title="Llamame por Skype"><i class="fa fa-skype"></i> jonathan_bt</a>
+                       </li>
+                      <li>
+                        <a target="_blank" href="https://ec.linkedin.com/in/bravojonathan" title="Mira mi perfil Profesional en Linkedin"><i class="fa fa-linkedin-square"></i> bravojonathan</a>
+                       </li>
+                      <li>
+                        <a target="_blank" href="https://twitter.com/jbravot" title="Sigueme en Twitter"><i class="fa fa-twitter"></i> @jbravot</a>
+                      </li>
+                      <li>
+                        <a target="_blank" href="https://github.com/jbravot" title="Mira mis proyectos en Github"><i class="fa fa-github"></i> jbravot</a>
+                       </li>
+                    </ul>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- End Contacto -->
+
+            <!-- Footer -->
+            <footer>
+              <div class="row">
+                <div class="col-md-12 text-center">
+                  <ul class="footer-contact">
+                    <li>
+                      Copyleft 2014
+                    </li>
+                    <li>
+                      <span class="logo-footer">Jonathan Bravo</span>
+                    </li>
+                    <li class="hidden-xs">
+                      -
+                    </li>
+                    <li class="footer-direction">
+                      Guayaquil, Ecuador
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </footer>
+        <!-- End Footer -->
+        <div id="toTop"><i title="Ir al Inicio" class="fa fa-chevron-up"></i></div>
       </div>
-    </footer>
-    <!-- End Footer -->
-    <!-- Script -->
-    <script src="web/js/jquery.js" charset="utf-8"></script>
-    <script src="web/bootstrap/js/bootstrap.min.js" charset="utf-8"></script>
-    <script src="web/js/main.js?v=1.8"  charset="utf-8"></script>
+      <!-- Script -->
+      <script>
+        var oldieCheck = Boolean(document.getElementsByTagName('html')[0].className.match(/\soldie\s/g));
+        if(!oldieCheck) {
+        document.write('<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.1/jquery.min.js"><\/script>');
+        } else {
+        document.write('<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"><\/script>');
+        }
+      </script>
+      <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
+         chromium.org/developers/how-tos/chrome-frame-getting-started -->
+      <!--[if lt IE 7 ]>
+      <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+      <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+      <![endif]-->
+      <script src="web/bootstrap/js/bootstrap.min.js" charset="utf-8"></script>
+      <script src="web/js/hammer.min.js?v=1.0"  charset="utf-8"></script>
+      <script src="web/js/main.js?v=3.8"  charset="utf-8"></script>
+      <script src="web/js/snow.js?v=1.0"  charset="utf-8"></script>
+      <script src="web/js/sequence/scripts/jquery.sequence-min.js"></script>
+      <script src="web/js/sequence/scripts/sequence_script.js"></script>
+      <script>
+
+          /*$(document).ready( function(){
+            if(! /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+               $.fn.snow({ minSize: 10, maxSize: 20, newOn: 1000, flakeColor: '#0099FF' });
+            }
+          });*/
+        var _gaq = _gaq || [];
+
+        var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+        _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+
+        _gaq.push(['_setAccount', 'UA-41356210-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+  </div>
   </body>
 </html>

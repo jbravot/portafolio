@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html xml:lang="es" lang="es">
+	<head>
+		<link rel="stylesheet" href="web/css/reset.css" type="text/css">
+	    <link rel="stylesheet" href="web/css/main.css" type="text/css">
+	    <link rel="stylesheet" href="web/css/form.css" type="text/css">
+		<link rel="stylesheet" href="web/js/popover-automatico/popover-automatico.css" />
+		<link rel="stylesheet" href="web/js/popover-automatico/popover-msg-icon.css" />
+		<link rel="stylesheet" href="web/js/chosen/chosen.css" />
+
+		<!--[if IE 6]><script src="js/ie/DD_belatedPNG_0.0.8a.js"></script><script src="js/ie/png-fix.js"></script><![endif]-->
+		<!--[if (lt IE 9)&(!IEMobile 7)]>
+			<script src="js/ie/modernizr-2.0.6.min.js"></script>
+			<script src="js/ie/css3-mediaqueries.js"></script>
+		 <![endif]-->
+
+		<!-- meta tags -->
+		<meta charset="UTF-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>MapBuilding</title>		
+	</head>
+	<body>
+		<div id="page">
+		<section id="main_map">
+			<div id="bar" class="bar panel-left panel-margin-right" style="">
+					<div class="fl cont-cambiar-icon">
+						<a href="nueva-ruta.html" class="fancy btn link-icon" ><span class="ruta">Nueva Ruta</span></a>
+						<a href="nueva-parada.html" class="fancy btn link-icon" ><span class="punto">Nueva Parada</span></a>
+						<div class="clear"></div>
+					</div>
+				<div class="clear"></div>
+			</div>
+			<div id="map_canvas" class="noprint panel-left panel-margin-right"></div>
+		</section>
+		<section id="panel" style="left: 0px;">
+			<div class="tab">
+				<div class="tab-header">
+					<h2>
+						<span class="ruta">Rutas</span>
+						<span rel="0" class="buscar-by buscar_up"></span>
+					</h2>
+					<div class="form-search">
+                        <div>
+                            <label class="fl">Nombre</label>
+                            <input id="buscar-nombre-ruta" type="text" class="fl" autocomplete="off" style="width: 218px;" />
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+				</div>
+				<div id="cont-rutas">
+					<table id="table-rutas" class="content-geo">
+						<tbody>
+							<tr id="ruta-1">
+								<td class="td-info">
+									<div class="td-info-div" rel="ruta-1">
+										<input id="ruta-1" type="checkbox" name="Ruta Terminal" checked="checked" class="ver-mapa ocultar" />
+
+										<span class="btn-acciones"></span>
+										<div class="cont-acciones ocultar">
+											<div><span class="tr-text icon-editar">Editar</span></div>
+											<div><span class="tr-text icon-borrar">Borrar</span></div>
+										</div>
+
+										<div class="geografia-nombre" style="margin: 0 20px;">
+											<span class="td-color" style="background-color: #00ff00"></span>
+											<span class="nombre">Ruta Terminal</span>
+											<span class="horario">Horario: 07H00 - 10H00</span>
+											<input class="nombre-fiend" type="hidden" value="Ruta Terminal">
+										</div>
+
+									</div>
+									<input id="ruta-id-1" type="hidden" value="1">
+								</td>
+							</tr>
+							
+							<tr id="ruta-2">
+								<td class="td-info">
+									<div class="td-info-div" rel="ruta-2">
+										<input id="ruta-2" type="checkbox" name="Ruta ALborada" checked="checked" class="ver-mapa ocultar"  />
+
+										<span class="btn-acciones"></span>
+										<div class="cont-acciones ocultar">
+											<div><span class="tr-text icon-editar">Editar</span></div>
+											<div><span class="tr-text icon-borrar">Borrar</span></div>
+										</div>
+
+										<div class="geografia-nombre" style="margin: 0 20px;">
+											<span class="td-color" style="background-color: #ff0000"></span>
+											<span class="nombre">Ruta ALborada</span>
+											<span class="horario">Horario: </span>
+											<input class="nombre-fiend" type="hidden" value="Ruta ALborada">
+										</div>
+
+									</div>
+									<input id="ruta-id-2" type="hidden" value="2">
+								</td>
+							</tr>
+							
+							<tr id="ruta-9">
+								<td class="td-info">
+									<div class="td-info-div" rel="ruta-9">
+										<input id="ruta-9" type="checkbox" name="Ruta 33" checked="checked" class="ver-mapa ocultar" />
+
+										<span class="btn-acciones"></span>
+										<div class="cont-acciones ocultar">
+											<div><span class="tr-text icon-editar">Editar</span></div>
+											<div><span class="tr-text icon-borrar">Borrar</span></div>
+										</div>
+
+										<div class="geografia-nombre" style="margin: 0 20px;">
+											<span class="td-color" style="background-color: #333300"></span>
+											<span class="nombre">Ruta 33</span>
+											<span class="horario">Horario: info adicional</span>
+											<input class="nombre-fiend" type="hidden" value="Ruta 33">
+										</div>
+
+									</div>
+									<input id="ruta-id-9" type="hidden" value="9">
+								</td>
+							</tr>
+							
+							<tr id="ruta-10">
+								<td class="td-info">
+									<div class="td-info-div" rel="ruta-10">
+										<input id="ruta-10" type="checkbox" name="ruta direccion" checked="checked" class="ver-mapa ocultar" />
+
+										<span class="btn-acciones"></span>
+										<div class="cont-acciones ocultar">
+											<div><span class="tr-text icon-editar">Editar</span></div>
+											<div><span class="tr-text icon-borrar">Borrar</span></div>
+										</div>
+
+										<div class="geografia-nombre" style="margin: 0 20px;">
+											<span class="td-color" style="background-color: #000000"></span>
+											<span class="nombre">ruta direccion</span>
+											<span class="horario">Horario: </span>
+											<input class="nombre-fiend" type="hidden" value="ruta direccion">
+										</div>
+
+									</div>
+									<input id="ruta-id-10" type="hidden" value="10">
+								</td>
+							</tr>
+							
+							<tr id="ruta-11">
+								<td class="td-info">
+									<div class="td-info-div" rel="ruta-11">
+										<input id="ruta-11" type="checkbox" name="Ruta Terminal - Av. Americas" checked="checked" class="ver-mapa ocultar" />
+
+										<span class="btn-acciones"></span>
+										<div class="cont-acciones ocultar">
+											<div><span class="tr-text icon-editar">Editar</span></div>
+											<div><span class="tr-text icon-borrar">Borrar</span></div>
+										</div>
+
+										<div class="geografia-nombre" style="margin: 0 20px;">
+											<span class="td-color" style="background-color: #000080"></span>
+											<span class="nombre">Ruta Terminal - Av. Americas</span>
+											<span class="horario">Horario: </span>
+											<input class="nombre-fiend" type="hidden" value="Ruta Terminal - Av. Americas">
+										</div>
+
+									</div>
+									<input id="ruta-id-11" type="hidden" value="11">
+								</td>
+							</tr>
+							
+							<tr id="ruta-12">
+								<td class="td-info">
+									<div class="td-info-div" rel="ruta-12">
+										<input id="ruta-12" type="checkbox" name="Ruta Alborada" checked="checked" class="ver-mapa ocultar" />
+
+										<span class="btn-acciones"></span>
+										<div class="cont-acciones ocultar">
+											<div><span class="tr-text icon-editar">Editar</span></div>
+											<div><span class="tr-text icon-borrar">Borrar</span></div>
+										</div>
+
+										<div class="geografia-nombre" style="margin: 0 20px;">
+											<span class="td-color" style="background-color: #008000"></span>
+											<span class="nombre">Ruta Alborada</span>
+											<span class="horario">Horario: Horario: 12H00 - 22:00</span>
+											<input class="nombre-fiend" type="hidden" value="Ruta Alborada">
+										</div>
+
+									</div>
+									<input id="ruta-id-12" type="hidden" value="12">
+								</td>
+							</tr>
+							
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="tab">
+				<div class="tab-header">
+					<h2>
+						<span class="punto">Paradas</span>
+						<span rel="0" class="buscar-by buscar_up"></span>
+					</h2>
+
+					<div class="form-search">
+                        <div>
+                            <label class="fl">Nombre</label>
+                            <input id="buscar-nombre" type="text" class="fl" autocomplete="off" style="width: 218px;" />
+                            <div class="clear"></div>
+                        </div>
+                        <div>
+                            <label class="fl">Ruta</label>
+                            <div class="fl"  style="width: 235px;" >
+                                <select id="buscar-ruta"  name="parada" data-placeholder="Selecione una" class="chzn-select">
+                                	<option value=""></option>
+									<option value="Ruta Terminal">Ruta Terminal</option>
+									<option value="Ruta ALborada">Ruta ALborada</option>
+									<option value="Ruta 33">Ruta 33</option>
+									<option value="ruta direccion">ruta direccion</option>
+									<option value="Ruta Terminal - Av. Americas">Ruta Terminal - Av. Americas</option>
+									<option value="Ruta Alborada">Ruta Alborada</option>
+						        </select>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+				</div>
+				<div id="cont-paradas">
+					<table id="table-paradas" class="content-geo">
+						<tbody>
+							<tr id="parada-2">
+								<td class="td-info">
+								    <div class="td-info-div" rel="parada-2">
+										<input id="parada-2" type="checkbox" name="Parada 1" checked="checked" class="ver-mapa ocultar" />
+
+										<span class="btn-acciones"></span>
+										<div class="cont-acciones ocultar">
+											<div><span class="tr-text icon-editar">Editar</span></div>
+											<div><span class="tr-text icon-borrar">Borrar</span></div>
+										</div>
+
+										<div class="geografia-nombre" style="margin: 0 20px;">
+											<span class="nombre">Parada 1 | Ruta Terminal</span>
+											<span class="horario">Horario: pasa cada 5 min</span>
+											<input class="nombre-fiend" type="hidden" value="Parada 1">
+											<input class="ruta-fiend" type="hidden" value="Ruta Terminal">
+										</div>
+
+									</div>
+
+									<input id="parada-id-2" type="hidden" value="2">
+								</td>
+							</tr>
+							
+							<tr id="parada-4">
+								<td class="td-info">
+								    <div class="td-info-div" rel="parada-4">
+										<input id="parada-4" type="checkbox" name="Comida Rapida" checked="checked" class="ver-mapa ocultar" />
+
+										<span class="btn-acciones"></span>
+										<div class="cont-acciones ocultar">
+											<div><span class="tr-text icon-editar">Editar</span></div>
+											<div><span class="tr-text icon-borrar">Borrar</span></div>
+										</div>
+
+										<div class="geografia-nombre" style="margin: 0 20px;">
+											<span class="nombre">Comida Rapida | Ruta ALborada</span>
+											<span class="horario">Horario: 07H00</span>
+											<input class="nombre-fiend" type="hidden" value="Comida Rapida">
+											<input class="ruta-fiend" type="hidden" value="Ruta ALborada">
+										</div>
+
+									</div>
+
+									<input id="parada-id-4" type="hidden" value="4">
+								</td>
+							</tr>
+							
+							<tr id="parada-5">
+								<td class="td-info">
+								    <div class="td-info-div" rel="parada-5">
+										<input id="parada-5" type="checkbox" name="Cafeteria" checked="checked" class="ver-mapa ocultar" />
+
+										<span class="btn-acciones"></span>
+										<div class="cont-acciones ocultar">
+											<div><span class="tr-text icon-editar">Editar</span></div>
+											<div><span class="tr-text icon-borrar">Borrar</span></div>
+										</div>
+
+										<div class="geografia-nombre" style="margin: 0 20px;">
+											<span class="nombre">Cafeteria | Ruta ALborada</span>
+											<span class="horario">Horario: </span>
+											<input class="nombre-fiend" type="hidden" value="Cafeteria">
+											<input class="ruta-fiend" type="hidden" value="Ruta ALborada">
+										</div>
+
+									</div>
+
+									<input id="parada-id-5" type="hidden" value="5">
+								</td>
+							</tr>
+							
+							<tr id="parada-6">
+								<td class="td-info">
+								    <div class="td-info-div" rel="parada-6">
+										<input id="parada-6" type="checkbox" name="parqueo" checked="checked" class="ver-mapa ocultar" />
+
+										<span class="btn-acciones"></span>
+										<div class="cont-acciones ocultar">
+											<div><span class="tr-text icon-editar">Editar</span></div>
+											<div><span class="tr-text icon-borrar">Borrar</span></div>
+										</div>
+
+										<div class="geografia-nombre" style="margin: 0 20px;">
+											<span class="nombre">parqueo | Ruta ALborada</span>
+											<span class="horario">Horario: </span>
+											<input class="nombre-fiend" type="hidden" value="parqueo">
+											<input class="ruta-fiend" type="hidden" value="Ruta ALborada">
+										</div>
+
+									</div>
+
+									<input id="parada-id-6" type="hidden" value="6">
+								</td>
+							</tr>
+							
+							<tr id="parada-7">
+								<td class="td-info">
+								    <div class="td-info-div" rel="parada-7">
+										<input id="parada-7" type="checkbox" name="Terminal" checked="checked" class="ver-mapa ocultar" />
+
+										<span class="btn-acciones"></span>
+										<div class="cont-acciones ocultar">
+											<div><span class="tr-text icon-editar">Editar</span></div>
+											<div><span class="tr-text icon-borrar">Borrar</span></div>
+										</div>
+
+										<div class="geografia-nombre" style="margin: 0 20px;">
+											<span class="nombre">Terminal | Ruta Terminal - Av. Americas</span>
+											<span class="horario">Horario: cada 10 min</span>
+											<input class="nombre-fiend" type="hidden" value="Terminal">
+											<input class="ruta-fiend" type="hidden" value="Ruta Terminal - Av. Americas">
+										</div>
+
+									</div>
+
+									<input id="parada-id-7" type="hidden" value="7">
+								</td>
+							</tr>
+							
+							<tr id="parada-8">
+								<td class="td-info">
+								    <div class="td-info-div" rel="parada-8">
+										<input id="parada-8" type="checkbox" name="Avicola Fernandez" checked="checked" class="ver-mapa ocultar" />
+
+										<span class="btn-acciones"></span>
+										<div class="cont-acciones ocultar">
+											<div><span class="tr-text icon-editar">Editar</span></div>
+											<div><span class="tr-text icon-borrar">Borrar</span></div>
+										</div>
+
+										<div class="geografia-nombre" style="margin: 0 20px;">
+											<span class="nombre">Avicola Fernandez | Ruta Terminal - Av. Americas</span>
+											<span class="horario">Horario: 111H00</span>
+											<input class="nombre-fiend" type="hidden" value="Avicola Fernandez">
+											<input class="ruta-fiend" type="hidden" value="Ruta Terminal - Av. Americas">
+										</div>
+
+									</div>
+
+									<input id="parada-id-8" type="hidden" value="8">
+								</td>
+							</tr>
+							
+							<tr id="parada-9">
+								<td class="td-info">
+								    <div class="td-info-div" rel="parada-9">
+										<input id="parada-9" type="checkbox" name="Mi Comisariato" checked="checked" class="ver-mapa ocultar" />
+
+										<span class="btn-acciones"></span>
+										<div class="cont-acciones ocultar">
+											<div><span class="tr-text icon-editar">Editar</span></div>
+											<div><span class="tr-text icon-borrar">Borrar</span></div>
+										</div>
+
+										<div class="geografia-nombre" style="margin: 0 20px;">
+											<span class="nombre">Mi Comisariato | Ruta Terminal - Av. Americas</span>
+											<span class="horario">Horario: </span>
+											<input class="nombre-fiend" type="hidden" value="Mi Comisariato">
+											<input class="ruta-fiend" type="hidden" value="Ruta Terminal - Av. Americas">
+										</div>
+
+									</div>
+
+									<input id="parada-id-9" type="hidden" value="9">
+								</td>
+							</tr>
+							
+							<tr id="parada-10">
+								<td class="td-info">
+								    <div class="td-info-div" rel="parada-10">
+										<input id="parada-10" type="checkbox" name="Trasnportes Esmeraldas" checked="checked" class="ver-mapa ocultar" />
+
+										<span class="btn-acciones"></span>
+										<div class="cont-acciones ocultar">
+											<div><span class="tr-text icon-editar">Editar</span></div>
+											<div><span class="tr-text icon-borrar">Borrar</span></div>
+										</div>
+
+										<div class="geografia-nombre" style="margin: 0 20px;">
+											<span class="nombre">Trasnportes Esmeraldas | Ruta Terminal - Av. Americas</span>
+											<span class="horario">Horario: </span>
+											<input class="nombre-fiend" type="hidden" value="Trasnportes Esmeraldas">
+											<input class="ruta-fiend" type="hidden" value="Ruta Terminal - Av. Americas">
+										</div>
+
+									</div>
+
+									<input id="parada-id-10" type="hidden" value="10">
+								</td>
+							</tr>
+							
+							<tr id="parada-11">
+								<td class="td-info">
+								    <div class="td-info-div" rel="parada-11">
+										<input id="parada-11" type="checkbox" name="Av. Americas" checked="checked" class="ver-mapa ocultar" />
+
+										<span class="btn-acciones"></span>
+										<div class="cont-acciones ocultar">
+											<div><span class="tr-text icon-editar">Editar</span></div>
+											<div><span class="tr-text icon-borrar">Borrar</span></div>
+										</div>
+
+										<div class="geografia-nombre" style="margin: 0 20px;">
+											<span class="nombre">Av. Americas | Ruta Terminal - Av. Americas</span>
+											<span class="horario">Horario: </span>
+											<input class="nombre-fiend" type="hidden" value="Av. Americas">
+											<input class="ruta-fiend" type="hidden" value="Ruta Terminal - Av. Americas">
+										</div>
+
+									</div>
+
+									<input id="parada-id-11" type="hidden" value="11">
+								</td>
+							</tr>
+							
+							<tr id="parada-12">
+								<td class="td-info">
+								    <div class="td-info-div" rel="parada-12">
+										<input id="parada-12" type="checkbox" name="Parada Inicial" checked="checked" class="ver-mapa ocultar" />
+
+										<span class="btn-acciones"></span>
+										<div class="cont-acciones ocultar">
+											<div><span class="tr-text icon-editar">Editar</span></div>
+											<div><span class="tr-text icon-borrar">Borrar</span></div>
+										</div>
+
+										<div class="geografia-nombre" style="margin: 0 20px;">
+											<span class="nombre">Parada Inicial | Ruta ALborada</span>
+											<span class="horario">Horario: pasa cada 20 min</span>
+											<input class="nombre-fiend" type="hidden" value="Parada Inicial">
+											<input class="ruta-fiend" type="hidden" value="Ruta ALborada">
+										</div>
+
+									</div>
+
+									<input id="parada-id-12" type="hidden" value="12">
+								</td>
+							</tr>
+							
+							<tr id="parada-13">
+								<td class="td-info">
+								    <div class="td-info-div" rel="parada-13">
+										<input id="parada-13" type="checkbox" name="Parada 2" checked="checked" class="ver-mapa ocultar" />
+
+										<span class="btn-acciones"></span>
+										<div class="cont-acciones ocultar">
+											<div><span class="tr-text icon-editar">Editar</span></div>
+											<div><span class="tr-text icon-borrar">Borrar</span></div>
+										</div>
+
+										<div class="geografia-nombre" style="margin: 0 20px;">
+											<span class="nombre">Parada 2 | Ruta Alborada</span>
+											<span class="horario">Horario: pasa cada 5 min</span>
+											<input class="nombre-fiend" type="hidden" value="Parada 2">
+											<input class="ruta-fiend" type="hidden" value="Ruta Alborada">
+										</div>
+
+									</div>
+
+									<input id="parada-id-13" type="hidden" value="13">
+								</td>
+							</tr>
+							
+							<tr id="parada-14">
+								<td class="td-info">
+								    <div class="td-info-div" rel="parada-14">
+										<input id="parada-14" type="checkbox" name="Parada Final" checked="checked" class="ver-mapa ocultar" />
+
+										<span class="btn-acciones"></span>
+										<div class="cont-acciones ocultar">
+											<div><span class="tr-text icon-editar">Editar</span></div>
+											<div><span class="tr-text icon-borrar">Borrar</span></div>
+										</div>
+
+										<div class="geografia-nombre" style="margin: 0 20px;">
+											<span class="nombre">Parada Final | Ruta Alborada</span>
+											<span class="horario">Horario: 07H00</span>
+											<input class="nombre-fiend" type="hidden" value="Parada Final">
+											<input class="ruta-fiend" type="hidden" value="Ruta Alborada">
+										</div>
+
+									</div>
+
+									<input id="parada-id-14" type="hidden" value="14">
+								</td>
+							</tr>
+							
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</section>
+	</div>
+    <!-- MENSAJES ERROR -->
+    <div id="msg">
+        <section>
+            <div class="content">
+                <div class="read"><span class="icon-msg"></span><span class="msg"></span></div>
+            </div>
+        </section>
+    </div>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js" charset="utf-8"></script>
+		<script src="//maps.googleapis.com/maps/api/js?sensor=false" charset="utf-8"></script>
+		<script src="web/js/popover-automatico/popover-automatico.min.js" charset="utf-8"></script>
+		<script src="web/js/chosen/chosen.jquery.min.js" charset="utf-8"></script>
+		<script src="web/OpenLayers.js" charset="utf-8"></script>
+		<script src="web/js/map.min.js" charset="utf-8"></script>
+		<script  src="web/js/main.min.js" charset="utf-8"></script>
+		<script  src="web/js/data.js" charset="utf-8"></script>
+		<script>
+			$(document).ready(function () {
+				$('#msg div.content div').addClass('ok');
+				$('#msg .msg').html('<br/ ><strong>Versión Demo</strong> NO guarda datos.');
+				$('#msg').popoverAuto({header: '', content: '#msg .content'});
+			});
+		</script>
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		      
+			ga('create', 'UA-41356210-1', 'jonathanbravo.com');
+			ga('send', 'pageview');
+		</script>
+	</body>
+</html>

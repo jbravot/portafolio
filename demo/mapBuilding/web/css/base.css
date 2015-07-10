@@ -1,0 +1,75 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    font: 13px/1.5 "Trebuchet MS",Helvetica,sans-serif !important;
+    color: #333;
+    background: #fff;
+}
+
+input{
+    margin: 2px 0;
+    padding: 2px 3px;
+    vertical-align: middle;
+    font-weight: normal;
+    font-size: 11px;
+}
+
+input[type=text], input[type=password]{
+    border: 1px solid #ccc;
+}
+
+.button, input[type=submit], input[type=button], .submit-row input {
+    background: white url(../images/nav-bg.gif) bottom repeat-x;
+    padding: 3px 5px;
+    color: black;
+    border: 1px solid #bbb;
+    border-color: #ddd #aaa #aaa #ddd;
+}
+
+.button:active, input[type=submit]:active, input[type=button]:active {
+    background-image: url(../images/nav-bg-reverse.gif);
+    background-position: top;
+}
+
+
+.errornote {
+    font-size: 12px !important;
+    display: block;
+    padding: 4px 5px 4px 25px;
+    margin: 0 0 3px 0;
+    border: 1px solid red;
+    color: red;
+    background: #ffc url(../images/icon_error.gif) 5px .3em no-repeat;
+}
+
+#container {
+    position: relative;
+    width: 100%;
+    min-width: 760px;
+    padding: 0;
+}
+
+#footer {
+    clear: both;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+#header {
+    overflow: hidden;
+    background-color: #F8F8F9;
+    background-image: url("/images/titlebar-gradient-on.png");
+    border-bottom: 1px solid #EBEBEC;
+    color: #919395;
+    font-weight: bold;
+    position: relative;
+}
+
+h1 {
+    padding: 0 10px;
+    font-size: 18px;
+    margin: 8px 0;
+    color: #919395;
+    font-weight: bold;
+}

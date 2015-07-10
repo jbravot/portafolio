@@ -1,0 +1,139 @@
+<Files .htaccess>
+	order allow,deny
+	deny from all
+</Files>
+
+## Can be commented out if causes errors, see notes above.
+Options +FollowSymLinks
+
+## Mod_rewrite in use.
+
+RewriteEngine On
+
+## Begin - Rewrite rules to block out some common exploits.
+# If you experience problems on your site block out the operations listed below
+# This attempts to block the most common type of exploit `attempts` to Joomla!
+#
+# Block out any script trying to base64_encode data within the URL.
+RewriteCond %{QUERY_STRING} base64_encode[^(]*\([^)]*\) [OR]
+# Block out any script that includes a <script> tag in URL.
+RewriteCond %{QUERY_STRING} (<|%3C)([^s]*s)+cript.*(>|%3E) [NC,OR]
+# Block out any script trying to set a PHP GLOBALS variable via URL.
+RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
+# Block out any script trying to modify a _REQUEST variable via URL.
+RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2})
+# Return 403 Forbidden header and show the content of the root homepage
+RewriteRule .* index.html [F]
+#
+## End - Rewrite rules to block out some common exploits.
+
+#### MY jonathan Bravo
+## Inyecciones SQL
+##RewriteCond %{QUERY_STRING} (;|<|>|’|”|\)|%0A|%0D|%22|%27|%3C|%3E|%00).*(/\*|union|select|insert|cast|set|declare|drop|update|md5|benchmark) [NC,OR]
+##RewriteCond %{QUERY_STRING} \.\./\.\. [OR]
+##RewriteCond %{QUERY_STRING} (localhost|loopback|127\.0\.0\.1) [NC,OR]
+##RewriteCond %{QUERY_STRING} \.[a-z0-9] [NC,OR]
+##RewriteCond %{QUERY_STRING} (<|>|’|%0A|%0D|%27|%3C|%3E|%00) [NC]
+##RewriteRule .* index.php [F]
+
+#### MY jonathan Bravo
+## Bloqueo de agentes y utilidades de linea de comandos
+RewriteCond %{HTTP_USER_AGENT} ^$ [OR]
+RewriteCond %{HTTP_USER_AGENT} ^(java|curl|wget) [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} (winhttp|HTTrack|clshttp|archiver|loader|email|harvest|extract|grab|miner) [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} (libwww-perl|curl|wget|python|nikto|scan) [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} (<|>|’|%0A|%0D|%27|%3C|%3E|%00) [NC]
+RewriteRule .* index.php [F]
+
+# sin acceso a proc/self/environ
+RewriteCond %{QUERY_STRING} proc/self/environ [OR]
+
+# bloquear cualquier script que trate de establecer un valor mosConfig a través de una URL
+RewriteCond %{QUERY_STRING} mosConfig_[a-zA-Z_]{1,21}(=|\%3D) [OR]
+
+# bloquear cualquier script que trate de colocarte código codificado base64_encode a través de una URL
+RewriteCond %{QUERY_STRING} base64_encode.*(.*) [OR]
+
+# bloquea cualquier script que incluya la tag <script> en la URL
+RewriteCond %{QUERY_STRING} (<|%3C).*script.*(>|%3E) [NC,OR]
+
+# bloquea cualquier script que trate de establecer la variable PHP GLOBALS a través de una URL
+RewriteCond %{QUERY_STRING} GLOBALS(=|[|\%[0-9A-Z]{0,2}) [OR]
+
+# bloquea cualquier script que trate de modificar una variable _REQUEST a través de una URL
+RewriteCond %{QUERY_STRING} _REQUEST(=|[|\%[0-9A-Z]{0,2})
+
+# manda a todas las peticiones bloqueadas a la página principal con un error de 403 Prohibido
+RewriteRule ^(.*)$ index.html [F,L]
+
+#
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+#
+# If the requested path and file is not /index.php and the request
+# has not already been internally rewritten to the index.php script
+###RewriteCond %{REQUEST_URI} !^/index\.html
+# and the request is for something within the component folder,
+# or for the site root, or for an extensionless URL, or the
+# requested URL ends with one of the listed extensions
+###RewriteCond %{REQUEST_URI} /component/|(/[^.]*|\.(php|html?|feed|pdf|vcf|raw))$ [NC]
+# and the requested path and file doesn't directly match a physical file
+###RewriteCond %{REQUEST_FILENAME} !-f
+# and the requested path and file doesn't directly match a physical folder
+###RewriteCond %{REQUEST_FILENAME} !-d
+# internally rewrite the request to the index.html script
+###RewriteRule .* index.html [L]
+#
+
+#### MY jonathan Bravo
+
+# Disable server signature
+ServerSignature Off
+
+RewriteBase / 
+RewriteCond %{HTTP_HOST} ^jonathanbravo.com$ [NC] 
+RewriteRule ^(.*)$ http://www.jonathanbravo.com/$1 [L,R=301]
+
+Header unset ETag
+FileETag None
+
+# Requires mod_expires to be enabled.
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ############################################
+  ## Add default Expires header
+  ## http://developer.yahoo.com/performance/rules.html#expires
+  <FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf|cur)$">
+      # Cache all files for 2 weeks after access (A).
+      ExpiresDefault A1209600
+  </FilesMatch>
+  <FilesMatch \.php$>
+    # Do not allow PHP scripts to be cached unless they explicitly send cache
+    # headers themselves. Otherwise all scripts would have to overwrite the
+    # headers set by mod_expires if they want another caching behavior. This may
+    # fail if an error occurs early in the bootstrap process, and it may cause
+    # problems if a non-Drupal PHP file is installed in a subdirectory.
+    ExpiresActive Off
+  </FilesMatch>
+</IfModule>
+
+# Rules to correctly serve gzip compressed CSS and JS files.
+<IfModule mod_deflate.c>
+   AddOutputFilterByType DEFLATE text/html
+   AddOutputFilterByType DEFLATE application/x-javascript
+   AddOutputFilterByType DEFLATE application/javascript
+   AddOutputFilterByType DEFLATE text/javascript
+   AddOutputFilterByType DEFLATE text/x-js
+   AddOutputFilterByType DEFLATE text/css
+ 
+# Highest 9 - Lowest 1
+   #DeflateCompressionLevel 5
+ 
+# Skip browsers with known problems
+   BrowserMatch ^Mozilla/4 gzip-only-text/html
+   BrowserMatch ^Mozilla/4\.0[678] no-gzip
+   BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+</IfModule>
+RewriteCond %{HTTP_HOST} ^tooltest\.jonathanbravo\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.tooltest\.jonathanbravo\.com$
+RewriteRule ^/?$ "http\:\/\/seo\-tooltest\.appspot\.com\/" [R=301,L]
+

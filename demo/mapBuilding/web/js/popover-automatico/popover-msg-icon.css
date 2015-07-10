@@ -1,0 +1,17 @@
+.icon-msg{
+	/*box-shadow:0px 0px 3px #111;*/
+	display:block;
+	float:left;
+	height:32px;
+	width:32px;
+	margin:10px 20px 10px 0
+}
+.err .icon-msg{
+	background: url("icon-msg/error.png") no-repeat scroll center center transparent;
+}
+.error-db .icon-msg{
+	background: url("icon-msg/error-db.png") no-repeat scroll center center transparent;
+}
+.ok .icon-msg{
+	background: url("icon-msg/ok.png") no-repeat scroll center center transparent;
+}

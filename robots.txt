@@ -1,4 +1,3 @@
 User-agent: *
-#Begin Attracta SEO Tools Sitemap. Do not remove
-sitemap: http://cdn.attracta.com/sitemap/3137265.xml.gz
-#End Attracta SEO Tools Sitemap. Do not remove
+Disallow: rey-park/*
+Disallow: rey-park-2/*
