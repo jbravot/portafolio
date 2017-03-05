@@ -18,7 +18,16 @@ $(document).ready(function(){
   $(document).on('click', '.navbar-right li a', function() {
     $('body').toggleClass('js-offcanvas');
   });
-
+/*
+  $("body").hammer({ drag_block_horizontal: true }).on("swipeleft dragleft", function(event){
+    event.gesture.preventDefault();
+    $('body').removeClass('js-offcanvas');
+  });
+  $("body").hammer({ drag_block_horizontal: true }).on("swiperight dragright", function(event){
+    event.gesture.preventDefault();
+    $('body').addClass('js-offcanvas');
+  });
+*/
   $(document).on('click', '#portafolio li a.thumbnail', function() {
     verDetallePortafolio($(this).attr("href"));
     return false;
