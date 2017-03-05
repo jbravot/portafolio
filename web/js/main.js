@@ -19,26 +19,9 @@ $(document).ready(function(){
     $('body').toggleClass('js-offcanvas');
   });
 
-  $("body").hammer({ drag_block_horizontal: true }).on("swipeleft dragleft", function(event){
-    event.gesture.preventDefault();
-    $('body').removeClass('js-offcanvas');
-  });
-  $("body").hammer({ drag_block_horizontal: true }).on("swiperight dragright", function(event){
-    event.gesture.preventDefault();
-    $('body').addClass('js-offcanvas');
-  });
-
   $(document).on('click', '#portafolio li a.thumbnail', function() {
     verDetallePortafolio($(this).attr("href"));
     return false;
-  });
-
-  $(document).on('mouseenter', '.pricing-table', function() {
-    $(this).addClass('pricing-table-hover');
-  });
-
-  $(document).on('mouseleave', '.pricing-table', function() {
-    $(this).removeClass('pricing-table-hover');
   });
 
   $(window).scroll(function() {
